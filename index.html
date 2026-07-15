@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Finding Tuki — Support</title>
+  <meta name="description" content="Support page for Finding Tuki, a pixel-art endless runner for iOS. FAQ, how to play, and contact information." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐢</text></svg>" />
+  <style>
+    :root {
+      --deep: #06283d;
+      --mid: #0a3d62;
+      --shallow: #1b6ca8;
+      --foam: #dff6ff;
+      --jelly: #ffd166;
+      --coral: #ff6b6b;
+      --seagrass: #47d16c;
+      --card: rgba(255, 255, 255, 0.07);
+      --card-border: rgba(223, 246, 255, 0.18);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: "Nunito", -apple-system, sans-serif;
+      background: linear-gradient(180deg, #47b5ff 0%, #1b6ca8 25%, #0a3d62 60%, #06283d 100%);
+      color: var(--foam);
+      min-height: 100vh;
+      line-height: 1.7;
+    }
+
+    .pixel { font-family: "Silkscreen", monospace; }
+
+    .wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 24px 64px;
+    }
+
+    /* Hero */
+    header {
+      text-align: center;
+      padding: 72px 0 48px;
+    }
+    .hero-emoji {
+      font-size: 64px;
+      display: block;
+      animation: bob 3s ease-in-out infinite;
+    }
+    @keyframes bob {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    h1 {
+      font-family: "Silkscreen", monospace;
+      font-size: clamp(1.6rem, 6vw, 2.6rem);
+      margin-top: 16px;
+      letter-spacing: 1px;
+      text-shadow: 3px 3px 0 rgba(6, 40, 61, 0.6);
+    }
+    .tagline {
+      margin-top: 12px;
+      font-size: 1.05rem;
+      opacity: 0.9;
+      max-width: 520px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .badges {
+      margin-top: 20px;
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .badge {
+      font-family: "Silkscreen", monospace;
+      font-size: 0.65rem;
+      padding: 5px 12px;
+      border: 1px solid var(--card-border);
+      border-radius: 4px;
+      background: var(--card);
+      letter-spacing: 0.5px;
+    }
+
+    /* Sections */
+    section { margin-top: 48px; }
+    h2 {
+      font-family: "Silkscreen", monospace;
+      font-size: 1.1rem;
+      letter-spacing: 1px;
+      color: var(--jelly);
+      margin-bottom: 18px;
+      text-shadow: 2px 2px 0 rgba(6, 40, 61, 0.5);
+    }
+    p + p { margin-top: 12px; }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 22px 24px;
+    }
+
+    /* How to play table */
+    .controls { width: 100%; border-collapse: collapse; }
+    .controls td {
+      padding: 10px 8px;
+      border-bottom: 1px solid var(--card-border);
+      vertical-align: top;
+    }
+    .controls tr:last-child td { border-bottom: none; }
+    .controls td:first-child { width: 45%; font-weight: 700; }
+
+    /* FAQ */
+    details {
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      margin-bottom: 12px;
+      overflow: hidden;
+    }
+    summary {
+      cursor: pointer;
+      padding: 16px 20px;
+      font-weight: 700;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    summary::-webkit-details-marker { display: none; }
+    summary::before {
+      content: "▸";
+      color: var(--jelly);
+      font-family: "Silkscreen", monospace;
+      transition: transform 0.15s;
+    }
+    details[open] summary::before { transform: rotate(90deg); }
+    details .answer {
+      padding: 0 20px 18px 42px;
+      opacity: 0.92;
+    }
+
+    /* Contact */
+    .contact-box { text-align: center; }
+    .contact-box a.mail {
+      display: inline-block;
+      margin-top: 14px;
+      font-family: "Silkscreen", monospace;
+      font-size: 0.85rem;
+      color: var(--deep);
+      background: var(--jelly);
+      padding: 12px 22px;
+      border-radius: 8px;
+      text-decoration: none;
+      box-shadow: 3px 3px 0 rgba(6, 40, 61, 0.5);
+      transition: transform 0.1s, box-shadow 0.1s;
+      word-break: break-all;
+    }
+    .contact-box a.mail:hover {
+      transform: translate(1px, 1px);
+      box-shadow: 2px 2px 0 rgba(6, 40, 61, 0.5);
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 64px;
+      text-align: center;
+      font-size: 0.85rem;
+      opacity: 0.75;
+    }
+    footer .pixel { font-size: 0.7rem; margin-top: 8px; display: block; }
+
+    a { color: var(--jelly); }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+
+    <header>
+      <span class="hero-emoji" aria-hidden="true">🐢</span>
+      <h1>Finding Tuki</h1>
+      <p class="tagline">
+        A pixel-art endless runner for iOS where a Mom Turtle swims a polluted
+        ocean to find her lost baby — Tuki. Collect glowing jellyfish, dodge the
+        trash humans leave behind, and swim as far as the tide will carry you.
+      </p>
+      <div class="badges">
+        <span class="badge">📱 iOS</span>
+        <span class="badge">🕹️ Endless Runner</span>
+        <span class="badge">🎨 Pixel Art</span>
+        <span class="badge">🌐 EN / ID</span>
+      </div>
+    </header>
+
+    <section id="about">
+      <h2>🌊 About the Game</h2>
+      <div class="card">
+        <p>
+          You play <strong>Mom Turtle</strong>, swimming up-screen through a
+          scrolling ocean. The sea is beautiful — and full of human garbage.
+          Weave through trash bags, plastic bottles, six-pack rings, and sea
+          mines, snack on jellyfish to keep your energy meter alive, and chase
+          the one thing that matters: your baby, <strong>Tuki</strong>.
+        </p>
+        <p>
+          Beneath the arcade loop is a gentle message about ocean pollution and
+          the everyday hazards marine life faces. Everything you dodge is
+          something humans threw away.
+        </p>
+      </div>
+    </section>
+
+    <section id="how-to-play">
+      <h2>🎮 How to Play</h2>
+      <div class="card">
+        <table class="controls">
+          <tr><td>🫲 Swipe left / right</td><td>Steer the turtle</td></tr>
+          <tr><td>🪼 Swim into jellyfish</td><td>Refill your energy meter</td></tr>
+          <tr><td>🗑️ 🍶 ⭕ 💣 Hazards</td><td>Dodge them — one hit and you're in trouble</td></tr>
+          <tr><td>⏸️ Pause button</td><td>Pause the game, open settings</td></tr>
+        </table>
+        <p style="margin-top: 16px;">
+          <strong>Goal:</strong> survive as long as possible. Your energy drains
+          constantly, jellyfish refill it, and the ocean scrolls faster the
+          longer you last. Beat your best score and climb the leaderboard.
+        </p>
+      </div>
+    </section>
+
+    <section id="faq">
+      <h2>❓ FAQ</h2>
+
+      <details>
+        <summary>The leaderboard is empty or won't load.</summary>
+        <div class="answer">
+          The leaderboard is powered by <strong>Game Center</strong>. Make sure
+          you're signed in: open <em>Settings → Games (Game Center)</em> on your
+          device and sign in with your Apple Account, then relaunch the game.
+          Scores submit automatically after each run once you're signed in.
+        </div>
+      </details>
+
+      <details>
+        <summary>Is my score saved if I lose internet connection?</summary>
+        <div class="answer">
+          Yes. Your best score and run history are saved on your device the
+          moment a run ends. You never lose a score to a bad connection.
+        </div>
+      </details>
+
+      <details>
+        <summary>How do I turn off music, sound effects, or vibration?</summary>
+        <div class="answer">
+          Open the in-game <strong>Settings</strong> menu (from the pause screen
+          or main menu). Music and sound effects have separate volume sliders,
+          and haptics (vibration) has its own toggle.
+        </div>
+      </details>
+
+      <details>
+        <summary>How do I change the language?</summary>
+        <div class="answer">
+          Finding Tuki supports <strong>English</strong> and
+          <strong>Indonesian</strong>. Switch between them in the in-game
+          Settings menu — no need to change your device language.
+        </div>
+      </details>
+
+      <details>
+        <summary>Can I replay the tutorial?</summary>
+        <div class="answer">
+          The guided tutorial runs automatically on your first play. If you'd
+          like to see it again, reinstalling the app resets the tutorial flag —
+          or just email us and we'll help you out.
+        </div>
+      </details>
+
+      <details>
+        <summary>Does the game collect my personal data?</summary>
+        <div class="answer">
+          The game stores your scores and settings on your device. Online
+          leaderboard features use Apple's <strong>Game Center</strong>, which
+          is governed by Apple's own privacy policy. We don't run our own
+          accounts, and there are no ads or third-party trackers.
+        </div>
+      </details>
+
+      <details>
+        <summary>Which devices are supported?</summary>
+        <div class="answer">
+          Finding Tuki runs on iPhone and iPad on recent versions of iOS /
+          iPadOS. If the game misbehaves on your device, email us with your
+          device model and iOS version and we'll investigate.
+        </div>
+      </details>
+    </section>
+
+    <section id="contact">
+      <h2>📮 Contact &amp; Support</h2>
+      <div class="card contact-box">
+        <p>
+          Found a bug, have a question, or just want to say hi to Tuki?
+          We usually reply within a few days.
+        </p>
+        <a class="mail" href="mailto:khalishmadani112@gmail.com">khalishmadani112@gmail.com</a>
+        <p style="margin-top: 16px; font-size: 0.9rem; opacity: 0.8;">
+          When reporting a bug, please include your device model, iOS version,
+          and what you were doing when it happened — it helps a lot!
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      <p>© 2026 Finding Tuki Team — Khalish, Nimah &amp; Hanum</p>
+      <span class="pixel">🐢💙 Keep the ocean clean. Help Tuki get home.</span>
+    </footer>
+
+  </div>
+</body>
+</html>
